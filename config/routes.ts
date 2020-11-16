@@ -6,7 +6,7 @@
       {
         name: 'login',
         path: '/user/login',
-        component: './user/Login',
+        component: './user/pages/Login.page',
       },
     ],
   },
@@ -14,19 +14,19 @@
     path: '/dashboard',
     name: 'dashboard',
     icon: 'smile',
-    component: './dashboard/Dashboard',
+    component: './dashboard/pages/Dashboard',
   },
   {
     path: '/list',
     name: 'list.table-list',
     icon: 'table',
-    component: './other/ListTableList',
+    component: './other/pages/ListTableList',
   },
   {
     path: '/task',
     name: 'task',
     icon: 'smile',
-    component: './task/Task',
+    component: './task/pages/Task.page',
   },
   {
     path: '/',

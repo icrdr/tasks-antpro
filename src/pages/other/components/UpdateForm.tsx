@@ -9,7 +9,7 @@ import {
   ProFormDateTimePicker,
 } from '@ant-design/pro-form';
 
-import { TableListItem } from '../data';
+import { TableListItem } from '../other';
 
 export interface FormValueType extends Partial<TableListItem> {
   target?: string;

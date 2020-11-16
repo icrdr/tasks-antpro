@@ -2,7 +2,7 @@ import React, { useCallback } from 'react';
 import { LogoutOutlined, SettingOutlined, UserOutlined } from '@ant-design/icons';
 import { Avatar, Menu, Spin } from 'antd';
 import { history, useModel } from 'umi';
-import { outLogin } from '@/pages/user/services/login';
+import * as service from '@/pages/user/services/login.service';
 import { stringify } from 'querystring';
 import HeaderDropdown from '../HeaderDropdown';
 import styles from './index.less';
@@ -15,7 +15,7 @@ export interface GlobalHeaderRightProps {
  * 退出登录，并且将当前的 url 保存
  */
 const loginOut = async () => {
-  await outLogin();
+  await service.logout();
   const { query, pathname } = history.location;
   const { redirect } = query;
   // Note: There may be security issues, please note

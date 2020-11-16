@@ -5,7 +5,7 @@ import { history, RequestConfig } from 'umi';
 import RightContent from '@/components/RightContent';
 import Footer from '@/components/Footer';
 import { ResponseError } from 'umi-request';
-import { queryCurrent } from './pages/user/services/user';
+import { queryCurrent } from './pages/user/services/user.service';
 import defaultSettings from '../config/defaultSettings';
 
 /**
