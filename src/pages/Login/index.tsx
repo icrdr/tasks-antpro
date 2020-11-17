@@ -1,10 +1,9 @@
 import React from 'react';
-import { useIntl, history, FormattedMessage, SelectLang, useRequest } from 'umi';
-import { Alert, Space, message, Typography, Col, Layout, Affix, Divider } from 'antd';
+import { useIntl, history, FormattedMessage, useRequest } from 'umi';
+import { Space, message, Typography, Col, Divider } from 'antd';
 import { LockTwoTone, UserOutlined, WechatOutlined } from '@ant-design/icons';
 import ProForm, { ProFormCheckbox, ProFormText } from '@ant-design/pro-form';
-import { login, loginParams } from './login.service';
-import gStyle from '@/global.less';
+import { login, loginParams } from './service';
 
 const { Title } = Typography;
 
@@ -77,12 +76,11 @@ const LoginForm: React.FC = () => {
       onFinish={(values: loginParams) => run(values)}
     >
       {/* <Alert className="m-b:2" message={errorMsg} type="error" showIcon /> */}
-      {/* {status === 'error' && <LoginMessage content={errorMsg} />} */}
       <ProFormText
         name="username"
         fieldProps={{
           size: 'large',
-          prefix: <UserOutlined className={gStyle.prefixIcon} />,
+          prefix: <UserOutlined className={'prefixIcon'} />,
         }}
         placeholder={usernamePhd}
         rules={usernameRule}
@@ -91,7 +89,7 @@ const LoginForm: React.FC = () => {
         name="password"
         fieldProps={{
           size: 'large',
-          prefix: <LockTwoTone className={gStyle.prefixIcon} />,
+          prefix: <LockTwoTone className={'prefixIcon'} />,
         }}
         placeholder={PasswordPhd}
         rules={passwordRule}
@@ -110,12 +108,12 @@ const LoginForm: React.FC = () => {
 const Login: React.FC<{}> = () => {
   return (
     <Col span={8} offset={8}>
-      <Space direction="vertical" style={{ width: '100%' }}>
+      <Space direction="vertical" className={'w:full'}>
         <Title> YIMU </Title>
         <LoginForm />
         <Space>
           <FormattedMessage id="pages.login.loginWith.tex" />
-          <WechatOutlined className={gStyle.icon} />
+          <WechatOutlined className={'icon'} />
         </Space>
       </Space>
     </Col>

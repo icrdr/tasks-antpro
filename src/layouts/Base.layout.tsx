@@ -7,7 +7,9 @@ import gStyle from '@/global.less';
 const Base: React.FC<{}> = ({ children }) => {
   return (
     <Layout className={gStyle.container}>
-      <Affix>{SelectLang && <SelectLang />}</Affix>
+      <Affix>
+        <SelectLang />
+      </Affix>
       <Layout.Content>{children}</Layout.Content>
       <Footer />
     </Layout>

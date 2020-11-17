@@ -8,9 +8,7 @@ import { ResponseError } from 'umi-request';
 import { queryCurrent } from './service';
 import defaultSettings from '../config/defaultSettings';
 
-/**
- * 获取用户信息比较慢的时候会展示一个 loading
- */
+
 export const initialStateConfig = {
   loading: <PageLoading />,
 };
@@ -95,13 +93,13 @@ const errorHandler = (error: ResponseError) => {
       message: `请求错误 ${response.status}: ${response.url}`,
       description: codeMessage[response.status] || response.statusText,
     });
-  }else if (!response) {
+  } else if (!response) {
     notification.error({
       description: '您的网络发生异常，无法连接服务器',
       message: '网络异常',
     });
   }
-  
+
   throw error;
 };
 

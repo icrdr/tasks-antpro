@@ -8,16 +8,7 @@ import {
   ProFormRadio,
   ProFormDateTimePicker,
 } from '@ant-design/pro-form';
-
-import { TableListItem } from '../other';
-
-export interface FormValueType extends Partial<TableListItem> {
-  target?: string;
-  template?: string;
-  type?: string;
-  time?: string;
-  frequency?: string;
-}
+import { FormValueType, TableListItem } from './data';
 
 export interface UpdateFormProps {
   onCancel: (flag?: boolean, formVals?: FormValueType) => void;

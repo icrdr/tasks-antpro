@@ -34,3 +34,11 @@ export interface TableListParams {
   filter?: { [key: string]: any[] };
   sorter?: { [key: string]: any };
 }
+
+export interface FormValueType extends Partial<TableListItem> {
+  target?: string;
+  template?: string;
+  type?: string;
+  time?: string;
+  frequency?: string;
+}

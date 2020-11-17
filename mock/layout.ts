@@ -1,10 +1,4 @@
 import { Request, Response } from 'express';
-import { waitTime } from './utils';
-
-const getFakeCaptcha = async (req: Request, res: Response) => {
-  await waitTime(2000);
-  return res.json('captcha-xxx');
-};
 
 const getCurrentUser = (req: Request, res: Response) => {
   res.send({
@@ -70,5 +64,4 @@ export default {
   'GET /api/users': getUsers,
   'GET /api/logout': logout,
   'POST /api/users': createUser,
-  'GET  /api/login/captcha': getFakeCaptcha,
 };
