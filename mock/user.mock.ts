@@ -1,12 +1,5 @@
 import { Request, Response } from 'express';
-
-const waitTime = (time: number = 100) => {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(true);
-    }, time);
-  });
-};
+import { waitTime } from './utils';
 
 const getFakeCaptcha = async (req: Request, res: Response) => {
   await waitTime(2000);
@@ -39,30 +32,6 @@ const getCurrentUser = (req: Request, res: Response) => {
     address: '西湖区工专路 77 号',
     phone: '0752-268888888',
   });
-};
-
-const login = async (req: Request, res: Response) => {
-  const { password, username, type } = req.body;
-  await waitTime(2000);
-  if (password === 'admin' && username === 'admin') {
-    res.send({
-      status: 'ok',
-      type,
-      currentAuthority: 'admin',
-    });
-  } else if (password === '12345' && username === 'user') {
-    res.send({
-      status: 'ok',
-      type,
-      currentAuthority: 'user',
-    });
-  } else {
-    res.send({
-      status: 'error',
-      type,
-      currentAuthority: 'guest',
-    });
-  }
 };
 
 const logout = (req: Request, res: Response) => {
@@ -99,7 +68,6 @@ const getUsers = async (req: Request, res: Response) => {
 export default {
   'GET /api/currentUser': getCurrentUser,
   'GET /api/users': getUsers,
-  'POST /api/login': login,
   'GET /api/logout': logout,
   'POST /api/users': createUser,
   'GET  /api/login/captcha': getFakeCaptcha,

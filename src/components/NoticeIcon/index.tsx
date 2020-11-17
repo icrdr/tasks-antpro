@@ -3,7 +3,7 @@ import { Tag, message } from 'antd';
 import { groupBy } from 'lodash';
 import moment from 'moment';
 import { useModel } from 'umi';
-import { queryNotices } from '@/pages/user/services/user.service';
+import { queryNotices } from '@/service';
 
 import NoticeIcon from './NoticeIcon';
 import styles from './index.less';

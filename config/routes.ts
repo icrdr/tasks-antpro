@@ -1,38 +1,43 @@
 ﻿export default [
   {
-    path: '/user',
+    path: '/login',
+    component: '@/layouts/Base.layout',
+    layout: false,
+    routes: [{ component: 'Login' }],
+  },
+  {
+    path: '/exception',
     layout: false,
     routes: [
       {
-        name: 'login',
-        path: '/user/login',
-        component: './user/pages/Login.page',
+        path: '/exception/404',
+        component: '404',
       },
     ],
   },
   {
     path: '/dashboard',
     name: 'dashboard',
-    icon: 'smile',
-    component: './dashboard/pages/Dashboard',
+    icon: 'dashboard',
+    component: 'Dashboard',
   },
   {
     path: '/list',
     name: 'list.table-list',
     icon: 'table',
-    component: './other/pages/ListTableList',
+    component: 'ListTableList',
   },
   {
     path: '/task',
     name: 'task',
     icon: 'smile',
-    component: './task/pages/Task.page',
+    component: 'Task',
   },
   {
     path: '/',
     redirect: '/dashboard',
   },
   {
-    component: './error/404',
+    redirect: '/exception/404',
   },
 ];
